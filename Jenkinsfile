@@ -12,12 +12,12 @@ pipeline {
 		}
 		stage('build')
 		{
-			steps {
-				when {
-					expression {
-						BRANCH_NAME == 'master'
-					}
+			when {
+				expression {
+					BRANCH_NAME == 'master'
 				}
+			}
+			steps {
 				script {
 					echo "Building the application"
 				}
@@ -25,12 +25,12 @@ pipeline {
 		}
 		stage('publish')
 		{
-			steps {
-				when {
-					expression {
-						BRANCH_NAME == 'master'
-					}
+			when {
+				expression {
+					BRANCH_NAME == 'master'
 				}
+			}
+			steps {
 				script {
 					echo "Building the application"
 				}
